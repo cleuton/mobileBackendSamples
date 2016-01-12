@@ -1,0 +1,10 @@
+<ion-view style="" title="News">
+    <ion-content class="has-header" overflow-scroll="true" padding="true" style="background: url(img/jhhZhJtSESvuiuWgOVVw_bkg.png) no-repeat center;">
+        <ion-list style="">
+            <ion-item style="" class="item" ng-repeat="article in news">
+                <h2>{{ article.newsDate }}</h2>
+                <p>{{ article.newsHeadLine }}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
