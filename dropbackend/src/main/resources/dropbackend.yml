@@ -1,0 +1,18 @@
+dbUrl: "localhost"
+server:
+  rootPath: /api/*
+  applicationConnectors:
+  - type: http
+    port: 8080
+  adminConnectors:
+  - type: http
+    port: 8081
+  
+
+logging:
+  appenders:
+    - type: console
+      threshold: DEBUG
+      target: stderr
+
+  
