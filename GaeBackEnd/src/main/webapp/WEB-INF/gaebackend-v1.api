@@ -1,0 +1,79 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://your-app-id.appspot.com/_ah/api",
+  "name" : "gaebackend",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "discovery" : [ "PUBLIC" ],
+  "adapter" : {
+    "bns" : "https://localhost:8888/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "gaebackend.newsFeed.listArticles" : {
+      "path" : "newsarticle",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "883135823153-1km58gjvalk5pi40soqd0bsgbdln4f2a.apps.googleusercontent.com ", "replace this with your Android client ID", "883135823153-21o3rj4jcegbdanbjs0hd68rfbe17m81.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.obomprogramador.gae.NewsFeed.listArticles",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "NewsArticle" : {
+        "id" : "NewsArticle",
+        "type" : "object",
+        "properties" : {
+          "newsDate" : {
+            "type" : "string"
+          },
+          "newsHeadLine" : {
+            "type" : "string"
+          }
+        }
+      },
+      "NewsArticleCollection" : {
+        "id" : "NewsArticleCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "NewsArticle"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.obomprogramador.gae.NewsFeed.listArticles" : {
+        "response" : {
+          "$ref" : "NewsArticleCollection"
+        }
+      }
+    }
+  }
+}
