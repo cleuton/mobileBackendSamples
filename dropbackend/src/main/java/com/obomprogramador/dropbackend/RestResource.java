@@ -40,6 +40,17 @@ public class RestResource {
 		this.dao = new DrbDao(dbUrl);
 	}
 	
+	/* ------------ ATTENTION ---------------------------------
+		This method should be protected. You should create 
+		an "Authenticator class" and protect the method 
+		with the "@Auth" annotation. 
+		Also, after login, you should return some kind of
+		security token to Client side, as it must include an
+		"Authorization" header, with that token, in each 
+		request.
+		
+		See: https://dropwizard.github.io/dropwizard/0.6.2/manual/auth.html
+	*/
 	@POST
 	@Timed
 	public Response processaLogin(LoginCredential login) {
