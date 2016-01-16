@@ -1,4 +1,9 @@
 # mobileBackendSamples
+
+Demonstrates: 
+
+[**Dropwizard**](http://www.dropwizard.io/0.9.1/docs/), [**Google App Engine**](https://cloud.google.com/appengine), [**Parse**](http://parse.com), [**Firebase**](http://https://www.firebase.com/), [**Ionic**](http://ionicframework.com/).
+
 This is a mobile backend showroom, with some popular choices for mobile backend development, with lots of samples. It is based on my own experience with all these solutions. 
 
 # The source code
